@@ -9,7 +9,7 @@ definition(
 )
 
 preferences {
-	section("When this switch is turned on, off or dimmed") {
+	section("When this switch is turned on or off") {
 		input "master", "capability.switch", title: "Where?"
 	}
 	section("Turn on or off all of these switches as well") {
