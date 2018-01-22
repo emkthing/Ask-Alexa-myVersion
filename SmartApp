@@ -35,15 +35,11 @@ def updated()
 	subscribe(master, "switch.on", onHandler)
 	subscribe(master, "switch.off", offHandler)
 }
-def onHandler(evt) {
-	log.debug evt.value
-	log.debug onSwitches()
+def onHandler() {
 	onSwitches()?.on()
 }
 
-def offHandler(evt) {
-	log.debug evt.value
-	log.debug offSwitches()
+def offHandler() {
 	offSwitches()?.off()
 }
 
@@ -57,4 +53,17 @@ private offSwitches() {
 	if(switches && offSwitches) { switches + offSwitches }
 	else if(switches) { switches }
 	else { offSwitches }
+}
+
+///////////////////////////////////////////////////////
+
+def onMethod(){
+	onHandler()
+	def result ="I have turned the light on"
+	sendOutput(result)
+}
+def offMethod(){
+	offHandler()
+	def result ="I have turned the light off"
+	sendOutput(result)
 }
