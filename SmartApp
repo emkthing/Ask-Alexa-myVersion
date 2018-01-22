@@ -23,18 +23,6 @@ preferences {
 	} 
 }
 
-def installed()
-{   
-	subscribe(master, "switch.on", onHandler)
-	subscribe(master, "switch.off", offHandler)
-}
-
-def updated()
-{
-	unsubscribe()
-	subscribe(master, "switch.on", onHandler)
-	subscribe(master, "switch.off", offHandler)
-}
 def onHandler() {
 	onSwitches()?.on()
 }
