@@ -31,18 +31,6 @@ def offHandler() {
 	offSwitches()?.off()
 }
 
-private onSwitches() {
-	if(switches && onSwitches) { switches + onSwitches }
-	else if(switches) { switches }
-	else { onSwitches }
-}
-
-private offSwitches() {
-	if(switches && offSwitches) { switches + offSwitches }
-	else if(switches) { switches }
-	else { offSwitches }
-}
-
 ///////////////////////////////////////////////////////
 
 def onMethod(){
